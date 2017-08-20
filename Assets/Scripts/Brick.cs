@@ -49,7 +49,7 @@ public class Brick : MonoBehaviour {
 		hitCounter++;
 		if(hitCounter >= maxHits){
 			// Smoke particles
-			GameObject instantiatedSmoke = (GameObject)Instantiate(smoke,this.transform.position,Quaternion.identity);
+			GameObject instantiatedSmoke = Instantiate(smoke,this.transform.position,Quaternion.identity) as GameObject;
 			instantiatedSmoke.particleSystem.startColor = gameObject.GetComponent<SpriteRenderer>().color;
 			Destroy(instantiatedSmoke,0.5f);
 			brickCount--;
